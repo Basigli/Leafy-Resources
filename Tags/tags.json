@@ -3,6 +3,32 @@
   "tagType": "Provider",
   "tags": [
     {
+      "name": "Test",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Led",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "reference",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tvalue \u003d \u00271\u0027 if currentValue.value else \u00270\u0027\n\t\n\tsystem.cirruslink.engine.publish(\u0027Leafy\u0027, \u0027Led\u0027, bytearray(value), 0, 0)"
+                }
+              ],
+              "dataType": "Boolean",
+              "sourceTagPath": "[~]GreenHouses/1/UVLight",
+              "name": "Led",
+              "value": true,
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "External Modules",
       "tagType": "Folder",
       "tags": [
@@ -50,7 +76,7 @@
           "valueSource": "memory",
           "dataType": "Int4",
           "name": "CurrentPresetId",
-          "value": 15,
+          "value": 19,
           "tagType": "AtomicTag"
         }
       ]
@@ -190,28 +216,366 @@
       "tagType": "Folder",
       "tags": [
         {
-          "name": "2",
+          "name": "18",
           "tagType": "Folder",
           "tags": [
             {
               "valueSource": "memory",
-              "dataType": "String",
-              "name": "Description",
-              "value": "Preset pianta basilico",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
               "dataType": "Int8",
               "name": "StagesNumber",
-              "value": 2,
+              "value": 1,
               "tagType": "AtomicTag"
             },
             {
               "valueSource": "memory",
               "dataType": "String",
               "name": "Name",
-              "value": "Basilico",
+              "value": "Test",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Description",
+              "value": "Preset di test",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Stages",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "1",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "EndDate",
+                      "value": 1724976000000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "StartDate",
+                      "value": 1691625600000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "UVLight",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 80,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 90,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1693137600000,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Ventilation",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1692302400000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 32,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 30,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "IrrigationPump",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 80,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1692306000000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 50,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "16",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Stages",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "1",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Ventilation",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 90,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1692302400000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 70,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "StartDate",
+                      "value": 1691625600000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "EndDate",
+                      "value": -3600000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "IrrigationPump",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 70,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 90,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1692306000000,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "UVLight",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 60,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1693137600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 30,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Description",
+              "value": "Preset di test per la menta",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Name",
+              "value": "Menta",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int8",
+              "name": "StagesNumber",
+              "value": 1,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "19",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Description",
+              "value": "Questo e\u0027 un preset per la crescita di una pianta di basilico",
               "tagType": "AtomicTag"
             },
             {
@@ -228,9 +592,16 @@
                       "tags": [
                         {
                           "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 50,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
                           "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692309600000,
+                          "name": "StartTime",
+                          "value": 1692306000000,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -250,137 +621,42 @@
                         {
                           "valueSource": "memory",
                           "dataType": "DateTime",
-                          "name": "StartTime",
-                          "value": 1692306000000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "LowSetpoint",
-                          "value": 70,
+                          "name": "EndTime",
+                          "value": 1692309600000,
                           "tagType": "AtomicTag"
                         }
                       ]
                     },
                     {
-                      "name": "UVLight",
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "EndDate",
+                      "value": 1692230400000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DateTime",
+                      "name": "StartDate",
+                      "value": 1691625600000,
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Ventilation",
                       "tagType": "Folder",
                       "tags": [
                         {
                           "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "StartTime",
-                          "value": 1693137600000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692309600000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
                           "dataType": "Int4",
                           "name": "HighSetpoint",
-                          "value": 95,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "LowSetpoint",
                           "value": 30,
                           "tagType": "AtomicTag"
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": false,
-                          "tagType": "AtomicTag"
-                        }
-                      ]
-                    },
-                    {
-                      "valueSource": "memory",
-                      "dataType": "DateTime",
-                      "name": "StartDate",
-                      "value": 1693526400000,
-                      "tagType": "AtomicTag"
-                    },
-                    {
-                      "valueSource": "memory",
-                      "dataType": "DateTime",
-                      "name": "EndDate",
-                      "value": 1694304000000,
-                      "tagType": "AtomicTag"
-                    },
-                    {
-                      "name": "Ventilation",
-                      "tagType": "Folder",
-                      "tags": [
-                        {
-                          "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "StartTime",
-                          "value": 1692302400000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": true,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692230400000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
                           "dataType": "Int4",
                           "name": "LowSetpoint",
-                          "value": 0,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "HighSetpoint",
-                          "value": 0,
-                          "tagType": "AtomicTag"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "name": "2",
-                  "tagType": "Folder",
-                  "tags": [
-                    {
-                      "valueSource": "memory",
-                      "dataType": "DateTime",
-                      "name": "EndDate",
-                      "value": 1693440000000,
-                      "tagType": "AtomicTag"
-                    },
-                    {
-                      "name": "Ventilation",
-                      "tagType": "Folder",
-                      "tags": [
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": true,
+                          "value": 20,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -388,13 +664,6 @@
                           "dataType": "DateTime",
                           "name": "StartTime",
                           "value": 1692302400000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "LowSetpoint",
-                          "value": 0,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -406,24 +675,38 @@
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "HighSetpoint",
-                          "value": 0,
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
                           "tagType": "AtomicTag"
                         }
                       ]
                     },
                     {
-                      "valueSource": "memory",
-                      "dataType": "DateTime",
-                      "name": "StartDate",
-                      "value": 1694304000000,
-                      "tagType": "AtomicTag"
-                    },
-                    {
                       "name": "UVLight",
                       "tagType": "Folder",
                       "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Int4",
+                          "name": "HighSetpoint",
+                          "value": 90,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
                         {
                           "valueSource": "memory",
                           "dataType": "DateTime",
@@ -433,71 +716,9 @@
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692309600000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
                           "dataType": "Int4",
                           "name": "LowSetpoint",
-                          "value": 90,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "HighSetpoint",
-                          "value": 90,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": false,
-                          "tagType": "AtomicTag"
-                        }
-                      ]
-                    },
-                    {
-                      "name": "IrrigationPump",
-                      "tagType": "Folder",
-                      "tags": [
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "HighSetpoint",
-                          "value": 90,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": false,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "StartTime",
-                          "value": 1692306000000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692309600000,
-                          "tagType": "AtomicTag"
-                        },
-                        {
-                          "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "LowSetpoint",
-                          "value": 70,
+                          "value": 50,
                           "tagType": "AtomicTag"
                         }
                       ]
@@ -505,6 +726,20 @@
                   ]
                 }
               ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int8",
+              "name": "StagesNumber",
+              "value": 1,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Name",
+              "value": "Basilico",
+              "tagType": "AtomicTag"
             }
           ]
         }
@@ -607,95 +842,13 @@
       "tagType": "Folder",
       "tags": [
         {
-          "name": "2",
-          "tagType": "Folder",
-          "tags": [
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IsTankEmpty",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "name": "Id",
-              "value": 2,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Float4",
-              "name": "TerrainHumidity",
-              "value": 85.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "Name",
-              "value": "Serra 2",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Ventilation",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Float4",
-              "name": "LightQuantity",
-              "value": 89.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IrrigationPump",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Float4",
-              "name": "AirTemperature",
-              "value": 30.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Float4",
-              "name": "AirHumidity",
-              "value": 67.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Auto",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "UVLight",
-              "value": true,
-              "tagType": "AtomicTag"
-            }
-          ]
-        },
-        {
           "name": "1",
           "tagType": "Folder",
           "tags": [
             {
               "valueSource": "memory",
               "name": "PresetId",
-              "value": 1,
+              "value": 18,
               "tagType": "AtomicTag"
             },
             {
@@ -728,7 +881,7 @@
               "valueSource": "memory",
               "dataType": "Boolean",
               "name": "UVLight",
-              "value": false,
+              "value": true,
               "tagType": "AtomicTag"
             },
             {
@@ -742,7 +895,7 @@
               "valueSource": "memory",
               "dataType": "Boolean",
               "name": "Auto",
-              "value": false,
+              "value": true,
               "tagType": "AtomicTag"
             },
             {
@@ -765,11 +918,12 @@
               "valueSource": "memory",
               "dataType": "Boolean",
               "name": "IrrigationPump",
-              "value": false,
+              "value": true,
               "tagType": "AtomicTag"
             },
             {
-              "valueSource": "reference",
+              "valueSource": "expr",
+              "expression": "{[~]_GreenHouseSim_/TerrainHumidity}",
               "dataType": "Float4",
               "sourceTagPath": "[~]_GreenHouseSim_/TerrainHumidity",
               "name": "TerrainHumidity",
@@ -782,6 +936,104 @@
               "sourceTagPath": "[~]_GreenHouseSim_/AirTemperature",
               "name": "AirTemperature",
               "value": 28.0,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "name": "PresetId",
+              "value": 18,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "IrrigationPump",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "Id",
+              "value": 1,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "UVLight",
+              "value": true,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "GrowthStage",
+              "value": 1,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "reference",
+              "dataType": "Float4",
+              "sourceTagPath": "[~]_GreenHouseSim_/AirHumidity",
+              "name": "AirHumidity",
+              "value": 56.0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Auto",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Ventilation",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "reference",
+              "dataType": "Float4",
+              "sourceTagPath": "[~]_GreenHouseSim_/AirTemperature",
+              "name": "AirTemperature",
+              "value": 28.0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "IsTankEmpty",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "reference",
+              "dataType": "Float4",
+              "sourceTagPath": "[~]_GreenHouseSim_/LightQuantity",
+              "name": "LightQuantity",
+              "value": 89.0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Name",
+              "value": "Serra 2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "reference",
+              "dataType": "Float4",
+              "sourceTagPath": "[~]_GreenHouseSim_/TerrainHumidity",
+              "name": "TerrainHumidity",
+              "value": 76.0,
               "tagType": "AtomicTag"
             }
           ]

@@ -7,6 +7,134 @@
       "tagType": "Folder",
       "tags": [
         {
+          "valueSource": "reference",
+          "dataType": "Float4",
+          "historyProvider": "LeafyDataTest",
+          "sourceTagPath": "[~]_GreenHouseSim_/AirHumidity",
+          "historyEnabled": true,
+          "name": "AirHumidity",
+          "historyTimeDeadbandUnits": "MIN",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Document",
+          "name": "Cache",
+          "value": {
+            "connection_name": "LeafyData",
+            "table_name": "LOGGER",
+            "function_name": "Logger cache"
+          },
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Int1",
+          "name": "New Tag",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "name": "ChatId",
+          "value": 779111402,
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "1",
+          "typeId": "Greenhouse",
+          "parameters": {
+            "GreenhouseName": {
+              "dataType": "String",
+              "value": "TestCommunication"
+            },
+            "ArduinoId": {
+              "dataType": "Integer",
+              "value": 1
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "Actuators",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "value": false,
+                  "name": "IrrigationPump",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": false,
+                  "name": "UVLight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": false,
+                  "name": "Ventilation",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Sensors",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "AirHumidity",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "IsTankEmpty",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TerrainHumidity",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LightQuantity",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AirTemperature",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Info",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "Auto",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PresetId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "GrowthStage",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ArduinoId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Name",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Id",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Led",
           "tagType": "Folder",
           "tags": [
@@ -29,54 +157,21 @@
       ]
     },
     {
-      "name": "External Modules",
-      "tagType": "Folder",
-      "tags": [
-        {
-          "name": "Sessions",
-          "tagType": "Folder",
-          "tags": [
-            {
-              "valueSource": "memory",
-              "dataType": "Int4",
-              "name": "maxInactivityMs",
-              "value": 500,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "sessionUDT",
-              "value": "[default]_types_/Control/Access/Session",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "sessionsPath",
-              "value": "[default]Sessions",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "version",
-              "value": "1.0.0",
-              "tagType": "AtomicTag"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Config",
       "tagType": "Folder",
       "tags": [
         {
           "valueSource": "memory",
+          "dataType": "Float4",
+          "name": "NormalRate",
+          "value": 0.4,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
           "dataType": "Int4",
           "name": "CurrentPresetId",
-          "value": 19,
+          "value": 45,
           "tagType": "AtomicTag"
         }
       ]
@@ -234,13 +329,6 @@
               "tagType": "AtomicTag"
             },
             {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "Description",
-              "value": "Preset di test",
-              "tagType": "AtomicTag"
-            },
-            {
               "name": "Stages",
               "tagType": "Folder",
               "tags": [
@@ -270,7 +358,7 @@
                           "valueSource": "memory",
                           "dataType": "Int4",
                           "name": "LowSetpoint",
-                          "value": 80,
+                          "value": 40,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -371,16 +459,16 @@
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "EndTime",
-                          "value": 1692309600000,
+                          "dataType": "Int4",
+                          "name": "LowSetpoint",
+                          "value": 70,
                           "tagType": "AtomicTag"
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "Int4",
-                          "name": "LowSetpoint",
-                          "value": 50,
+                          "dataType": "DateTime",
+                          "name": "EndTime",
+                          "value": 1692309600000,
                           "tagType": "AtomicTag"
                         }
                       ]
@@ -388,6 +476,13 @@
                   ]
                 }
               ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Description",
+              "value": "Preset di test - NON CANCELLARE!  - ",
+              "tagType": "AtomicTag"
             }
           ]
         },
@@ -648,15 +743,15 @@
                         {
                           "valueSource": "memory",
                           "dataType": "Int4",
-                          "name": "HighSetpoint",
-                          "value": 30,
+                          "name": "LowSetpoint",
+                          "value": 20,
                           "tagType": "AtomicTag"
                         },
                         {
                           "valueSource": "memory",
                           "dataType": "Int4",
-                          "name": "LowSetpoint",
-                          "value": 20,
+                          "name": "HighSetpoint",
+                          "value": 30,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -702,16 +797,16 @@
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "Boolean",
-                          "name": "IsTemp",
-                          "value": false,
+                          "dataType": "DateTime",
+                          "name": "StartTime",
+                          "value": 1693137600000,
                           "tagType": "AtomicTag"
                         },
                         {
                           "valueSource": "memory",
-                          "dataType": "DateTime",
-                          "name": "StartTime",
-                          "value": 1693137600000,
+                          "dataType": "Boolean",
+                          "name": "IsTemp",
+                          "value": false,
                           "tagType": "AtomicTag"
                         },
                         {
@@ -838,202 +933,39 @@
       ]
     },
     {
-      "name": "GreenHouses",
+      "name": "External Modules",
       "tagType": "Folder",
       "tags": [
         {
-          "name": "1",
+          "name": "Sessions",
           "tagType": "Folder",
           "tags": [
             {
               "valueSource": "memory",
-              "name": "PresetId",
-              "value": 18,
+              "dataType": "String",
+              "name": "sessionUDT",
+              "value": "[default]_types_/Control/Access/Session",
               "tagType": "AtomicTag"
             },
             {
               "valueSource": "memory",
               "dataType": "String",
-              "name": "Name",
-              "value": "Serra 1",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IsTankEmpty",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "name": "GrowthStage",
-              "value": 1,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "name": "Id",
-              "value": 1,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "UVLight",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Ventilation",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Auto",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/LightQuantity",
-              "name": "LightQuantity",
-              "value": 89.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/AirHumidity",
-              "name": "AirHumidity",
-              "value": 56.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IrrigationPump",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "expr",
-              "expression": "{[~]_GreenHouseSim_/TerrainHumidity}",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/TerrainHumidity",
-              "name": "TerrainHumidity",
-              "value": 76.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/AirTemperature",
-              "name": "AirTemperature",
-              "value": 28.0,
-              "tagType": "AtomicTag"
-            }
-          ]
-        },
-        {
-          "name": "2",
-          "tagType": "Folder",
-          "tags": [
-            {
-              "valueSource": "memory",
-              "name": "PresetId",
-              "value": 18,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IrrigationPump",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "name": "Id",
-              "value": 1,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "UVLight",
-              "value": true,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "name": "GrowthStage",
-              "value": 1,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/AirHumidity",
-              "name": "AirHumidity",
-              "value": 56.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Auto",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "Ventilation",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/AirTemperature",
-              "name": "AirTemperature",
-              "value": 28.0,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "IsTankEmpty",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/LightQuantity",
-              "name": "LightQuantity",
-              "value": 89.0,
+              "name": "sessionsPath",
+              "value": "[default]Sessions",
               "tagType": "AtomicTag"
             },
             {
               "valueSource": "memory",
               "dataType": "String",
-              "name": "Name",
-              "value": "Serra 2",
+              "name": "version",
+              "value": "1.0.0",
               "tagType": "AtomicTag"
             },
             {
-              "valueSource": "reference",
-              "dataType": "Float4",
-              "sourceTagPath": "[~]_GreenHouseSim_/TerrainHumidity",
-              "name": "TerrainHumidity",
-              "value": 76.0,
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "maxInactivityMs",
+              "value": 500,
               "tagType": "AtomicTag"
             }
           ]
@@ -1041,8 +973,350 @@
       ]
     },
     {
+      "name": "GreenHouses",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "1",
+          "typeId": "Greenhouse",
+          "parameters": {
+            "GreenhouseName": {
+              "dataType": "String",
+              "value": "Test MQTT"
+            },
+            "ArduinoId": {
+              "dataType": "String",
+              "value": "PVHBE"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "Sensors",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "AirTemperature",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "IsTankEmpty",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AirHumidity",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TerrainHumidity",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "historyMaxAge": 1,
+                  "historyMaxAgeUnits": "MIN",
+                  "historySampleRateUnits": "MIN",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1,
+                  "name": "LightQuantity",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Info",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "GrowthStage",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Name",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Id",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": true,
+                  "name": "Auto",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 18,
+                  "name": "PresetId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ArduinoId",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Actuators",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "value": true,
+                  "name": "Ventilation",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": false,
+                  "name": "IrrigationPump",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": true,
+                  "name": "UVLight",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "_types_",
-      "tagType": "Folder"
+      "tagType": "Folder",
+      "tags": [
+        {
+          "typeColor": -16733184,
+          "name": "Greenhouse",
+          "typeId": "",
+          "parameters": {
+            "GreenhouseName": {
+              "dataType": "String"
+            },
+            "ArduinoId": {
+              "dataType": "Integer"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "name": "Info",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{GreenhouseName}"
+                  },
+                  "valueSource": "memory",
+                  "dataType": "String",
+                  "name": "Name",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{ArduinoId}"
+                  },
+                  "valueSource": "memory",
+                  "dataType": "String",
+                  "name": "ArduinoId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "name": "PresetId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "name": "GrowthStage",
+                  "value": 1,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "dataType": "Boolean",
+                  "name": "Auto",
+                  "value": false,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{InstanceName}"
+                  },
+                  "valueSource": "memory",
+                  "name": "Id",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Actuators",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\tvalue \u003d \u00271\u0027 if currentValue.value else \u00270\u0027\n\tarduino_id \u003d system.tag.readBlocking([\"[.]../Info/ArduinoId\"])[0].value\n\ttopic \u003d str(arduino_id) + \"/\" + tagPath.split(\"/\")[-1]\n\tsystem.cirruslink.engine.publish(\u0027Leafy\u0027, topic, bytearray(value), 0, 0)"
+                    }
+                  ],
+                  "dataType": "Boolean",
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "UVLight",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "value": false,
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\tvalue \u003d \u00271\u0027 if currentValue.value else \u00270\u0027\n\tarduino_id \u003d system.tag.readBlocking([\"[.]../Info/ArduinoId\"])[0].value\n\ttopic \u003d str(arduino_id) + \"/\" + tagPath.split(\"/\")[-1]\n\tsystem.cirruslink.engine.publish(\u0027Leafy\u0027, topic, bytearray(value), 0, 0)"
+                    }
+                  ],
+                  "dataType": "Boolean",
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "IrrigationPump",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "value": false,
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\tvalue \u003d \u00271\u0027 if currentValue.value else \u00270\u0027\n\tarduino_id \u003d system.tag.readBlocking([\"[.]../Info/ArduinoId\"])[0].value\n\ttopic \u003d str(arduino_id) + \"/\" + tagPath.split(\"/\")[-1]\n\tsystem.cirruslink.engine.publish(\u0027Leafy\u0027, topic, bytearray(value), 0, 0)"
+                    }
+                  ],
+                  "dataType": "Boolean",
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "Ventilation",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "value": false,
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                }
+              ]
+            },
+            {
+              "name": "Sensors",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "sourceTagPath": {
+                    "bindType": "parameter",
+                    "binding": "[MQTT Engine]SerraInput/{ArduinoId}/IsTankEmpty"
+                  },
+                  "valueSource": "reference",
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\t#message \u003d \u0027Variables: %s\u0027 % str(locals())\n\tmessage \u003d \u0027hello\u0027\n\tcore.utils.logger.info(\u0027valueChanged\u0027, message)\n\tif previousValue.value \u003d\u003d False and currentValue.value \u003d\u003d True:\n\t\tgreenhouse_id \u003d tagPath.split(\u0027/\u0027)[1]\n\t\tactuator_name \u003d core.greenhouse.classes.Actuators.IRRIGATION\n\t\tcore.greenhouse.controller.turn_off(greenhouse_id, actuator_name)"
+                    }
+                  ],
+                  "historyMaxAge": 1,
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "IsTankEmpty",
+                  "historyEnabled": true,
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "sourceTagPath": {
+                    "bindType": "parameter",
+                    "binding": "[MQTT Engine]SerraInput/{ArduinoId}/TerrainHumidity"
+                  },
+                  "valueSource": "reference",
+                  "historyMaxAge": 1,
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "TerrainHumidity",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "sourceTagPath": {
+                    "bindType": "parameter",
+                    "binding": "[MQTT Engine]SerraInput/{ArduinoId}/LightQuantity"
+                  },
+                  "valueSource": "reference",
+                  "historyMaxAge": 1,
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "LightQuantity",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "sourceTagPath": {
+                    "bindType": "parameter",
+                    "binding": "[MQTT Engine]SerraInput/{ArduinoId}/AirHumidity"
+                  },
+                  "valueSource": "reference",
+                  "historyMaxAge": 1,
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "AirHumidity",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                },
+                {
+                  "sourceTagPath": {
+                    "bindType": "parameter",
+                    "binding": "[MQTT Engine]SerraInput/{ArduinoId}/AirTemperature"
+                  },
+                  "valueSource": "reference",
+                  "historyMaxAge": 1,
+                  "historyProvider": "LeafyData",
+                  "historyMaxAgeUnits": "MIN",
+                  "name": "AirTemperature",
+                  "historyEnabled": true,
+                  "historyTimeDeadbandUnits": "MIN",
+                  "historySampleRateUnits": "MIN",
+                  "tagType": "AtomicTag",
+                  "sampleMode": "Periodic",
+                  "historySampleRate": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
